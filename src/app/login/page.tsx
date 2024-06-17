@@ -34,6 +34,9 @@ export default function LoginPage() {
     if(user.email.length>0 && user.password.length>0){
       setButtonDisabled(false);
     }
+    else {
+      setButtonDisabled(true);
+    }
   },[user])
 
   return (
@@ -68,7 +71,7 @@ export default function LoginPage() {
         />
       </div>
       <button className="Login-btn text-2xl m-4 p-3 outline-none border rounded-md border-black bg-blue-100 transition-all hover:bg-blue-200 cursor-pointer" onClick={onLogin}>{buttonDisabled?"No Login":"Login"}</button>
-      <p className="text-gray-500">Don't have an account <Link href="/signup" className=" text-2xl text-blue-400 underline">SignUp Here</Link></p>
+      <p className="text-gray-500">Dont have an account <Link href="/signup" className=" text-2xl text-blue-400 underline">SignUp Here</Link></p>
     </div>
   );
 }

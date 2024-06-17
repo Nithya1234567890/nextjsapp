@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
-export default function signupPage() {
+export default function SignupPage() {
   const router=useRouter();
   const [user, setUser] = useState({
     username: "",
@@ -32,6 +32,9 @@ export default function signupPage() {
   useEffect(()=>{
     if(user.username.length>0 && user.password.length>0 && user.email.length>0){
       setButtonDisabled(false);
+    }
+    else {
+      setButtonDisabled(true);
     }
   },[user])
 
